@@ -4,6 +4,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_cadastro">
+    android:background="#BF3641"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/layContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layTop"
+                android:layout_width="match_parent"
+                android:layout_height="153dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="@+id/scrollView2"
+                app:layout_constraintTop_toTopOf="@+id/scrollView2">
+
+                <EditText
+                    android:id="@+id/txtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name" />
+
+                <EditText
+                    android:id="@+id/txtLName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Last Name" />
+
+                <EditText
+                    android:id="@+id/txtId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Id User" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layMidle"
+                android:layout_width="match_parent"
+                android:layout_height="113dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/scrollView2"
+                app:layout_constraintTop_toBottomOf="@+id/layTop">
+
+                <EditText
+                    android:id="@+id/txtFunction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--Function--" />
+
+                <TextView
+                    android:id="@+id/txtTeam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--Team--" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layMeetings"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/scrollView2"
+                app:layout_constraintTop_toBottomOf="@+id/layMidle">
+
+                <TextView
+                    android:id="@+id/txtMeetings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Meetings" />
+
+                <ListView
+                    android:id="@+id/lstMeetings"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layTasks"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/scrollView2"
+                app:layout_constraintTop_toBottomOf="@+id/layMidle">
+
+                <TextView
+                    android:id="@+id/txtTasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tasks" />
+
+                <ListView
+                    android:id="@+id/lstTasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </android.support.constraint.ConstraintLayout>
