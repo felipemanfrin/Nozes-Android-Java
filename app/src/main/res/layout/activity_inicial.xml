@@ -25,7 +25,7 @@
             <LinearLayout
                 android:id="@+id/layTop"
                 android:layout_width="match_parent"
-                android:layout_height="67dp"
+                android:layout_height="80dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/shape"
                 android:orientation="vertical"
@@ -45,6 +45,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="--Last Name--" />
+                <TextView
+                    android:id="@+id/txtId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--Id User--" />
 
             </LinearLayout>
 
@@ -76,7 +81,7 @@
             <LinearLayout
                 android:id="@+id/layMeetings"
                 android:layout_width="match_parent"
-                android:layout_height="136dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/shape"
                 android:orientation="vertical"
@@ -100,7 +105,7 @@
             <LinearLayout
                 android:id="@+id/layTasks"
                 android:layout_width="match_parent"
-                android:layout_height="136dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/shape"
                 android:orientation="vertical"
