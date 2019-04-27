@@ -7,68 +7,59 @@
     android:background="#BF3641"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/edtUser"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/edtUser"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="0dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#8C232C"
+        android:layout_width="423dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="28dp"
+        android:background="#FFFFFF"
         android:text="LOGIN"
-        android:textColor="#FFFFFF"
+        android:textColor="#8C232C"
         android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789" />
+        app:layout_constraintBottom_toTopOf="@+id/txtForgot"
+        app:layout_constraintEnd_toEndOf="@+id/txtForgot"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="@+id/txtForgot" />
 
     <EditText
         android:id="@+id/edtUser"
         android:layout_width="311dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@drawable/ic_person_black_24dp"
+        android:drawableLeft="@drawable/ic_person_black_24dp"
+        android:drawablePadding="5dp"
         android:ems="10"
         android:hint="User"
         android:inputType="textPersonName"
+        android:textAlignment="textStart"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/editText10"
-        app:layout_constraintEnd_toEndOf="@+id/editText10"
-        app:layout_constraintStart_toStartOf="@+id/editText10"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:textColorLink="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/edtPassword"
+        app:layout_constraintEnd_toEndOf="@+id/edtPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtPassword" />
 
     <EditText
-        android:id="@+id/editText10"
+        android:id="@+id/edtPassword"
         android:layout_width="311dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@drawable/ic_lock_black_24dp"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
+        android:drawablePadding="5dp"
         android:ems="10"
         android:hint="Password"
+
         android:inputType="textPassword"
+        android:textAlignment="textStart"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin" />
@@ -77,16 +68,22 @@
         android:id="@+id/txtForgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="32dp"
         android:text="Forgot Password"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        app:layout_constraintVertical_bias="0.257" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="232dp"
+        android:layout_height="208dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtUser"
+        app:layout_constraintEnd_toEndOf="@+id/edtUser"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="@+id/edtUser"
+        app:srcCompat="@mipmap/esquilot" />
 
 </android.support.constraint.ConstraintLayout>

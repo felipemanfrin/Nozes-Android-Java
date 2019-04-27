@@ -9,8 +9,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="395dp"
-        android:layout_height="715dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
         <LinearLayout
             android:id="@+id/layContent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
@@ -90,6 +90,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Meetings" />
+
+                <ListView
+                    android:id="@+id/lstMeetings"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
             </LinearLayout>
 
             <LinearLayout
@@ -103,11 +108,17 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/scrollView2"
                 app:layout_constraintTop_toBottomOf="@+id/layMidle">
+
                 <TextView
                     android:id="@+id/txtTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tasks" />
+
+                <ListView
+                    android:id="@+id/lstTasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
             </LinearLayout>
 
 
