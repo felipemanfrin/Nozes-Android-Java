@@ -86,7 +86,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/layMidle">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/txtMeetings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Meetings" />
@@ -104,7 +104,7 @@
                 app:layout_constraintStart_toStartOf="@+id/scrollView2"
                 app:layout_constraintTop_toBottomOf="@+id/layMidle">
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/txtTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tasks" />
