@@ -24,6 +24,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void logar(){
-        startActivity(new Intent(MainActivity.this, InicialActivity.class));
+        startActivity(new Intent(MainActivity.this, activity_cadastro.class));
     }
 }
