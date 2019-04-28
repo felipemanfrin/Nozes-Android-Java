@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="--Title--"
-        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

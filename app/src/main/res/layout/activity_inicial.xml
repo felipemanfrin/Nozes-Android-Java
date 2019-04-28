@@ -20,12 +20,13 @@
             android:id="@+id/layContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layoutDirection="inherit"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/layTop"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/shape"
                 android:orientation="vertical"
@@ -38,25 +39,28 @@
                     android:id="@+id/txtName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="--Name--" />
+                    android:text="--Name--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle" />
 
                 <TextView
                     android:id="@+id/txtLName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="--Last Name--" />
+                    android:text="--Last Name--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
                 <TextView
                     android:id="@+id/txtId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="--Id User--" />
+                    android:text="--Id User--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/layMidle"
                 android:layout_width="match_parent"
-                android:layout_height="77dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/shape"
                 android:orientation="vertical"
@@ -69,13 +73,15 @@
                     android:id="@+id/txtFunction"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="--Function--" />
+                    android:text="--Function--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"/>
 
                 <TextView
                     android:id="@+id/txtTeam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="--Team--" />
+                    android:text="--Team--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
             </LinearLayout>
 
             <LinearLayout
@@ -94,7 +100,9 @@
                     android:id="@+id/txtMeetings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Meetings" />
+                    android:text="Meetings"
+                    android:textColor="#BF3641"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
 
                 <ListView
                     android:id="@+id/lstMeetings"
@@ -118,7 +126,9 @@
                     android:id="@+id/txtTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tasks" />
+                    android:text="Tasks"
+                    android:textColor="#BF3641"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
 
                 <ListView
                     android:id="@+id/lstTasks"
