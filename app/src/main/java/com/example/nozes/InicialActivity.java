@@ -2,8 +2,11 @@ package com.example.nozes;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,35 +20,19 @@ public class InicialActivity extends AppCompatActivity {
         ListView listMeeting = (ListView) findViewById(R.id.lstMeetings);//cria a lista para reuniões a partir do xml
         ListView listTask = (ListView) findViewById(R.id.lstTasks);//cria a lista para as tarefas a partir do xml
 
-        /*
-        ArrayList<String> meeting = runMeeting();//cria um arraylist para reuniões chamando suas função*/
-        ArrayList<String> task = runTask();//cria um arraylist para tarefas chamando suas função
-
+        ArrayList<String> task;//cria um arraylist para tarefas chamando suas função
+        task = runTask();
         //cria os arrayadapters
         ArrayAdapter arrayAdapterM = new MeetingAdapter(this, addMeeting());
         //ArrayAdapter<String> arrayAdapterM = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, meeting);
-        ArrayAdapter<String> arrayAdapterT = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, task);
+        ArrayAdapter<String> arrayAdapterT = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, task);
 
         //seta os arrayadapters
         listMeeting.setAdapter(arrayAdapterM);
         listTask.setAdapter(arrayAdapterT);
 
     }
-    /*
-    //função para lista de reuniões
-    private ArrayList<String> runMeeting(){
-        ArrayList<String> dados = new ArrayList<String>();//cria o array
-        dados.add("Meeting1");
-        dados.add("Meeting2");
-        dados.add("Meeting3");
-        dados.add("Meeting4");
-        dados.add("Meeting5");
-        dados.add("Meeting6");
-        dados.add("Meeting7");
-        dados.add("Meeting8");
-        dados.add("Meeting9");
-        return dados;//retorna todos os dados adicionados
-    }*/
+
     //função para lista de tarefas
     private ArrayList<String> runTask(){
         ArrayList<String> dados = new ArrayList<String>();//cria o array
