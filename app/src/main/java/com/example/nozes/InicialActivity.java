@@ -20,12 +20,13 @@ public class InicialActivity extends AppCompatActivity {
         ListView listMeeting = (ListView) findViewById(R.id.lstMeetings);//cria a lista para reuniões a partir do xml
         ListView listTask = (ListView) findViewById(R.id.lstTasks);//cria a lista para as tarefas a partir do xml
 
-        ArrayList<String> task;//cria um arraylist para tarefas chamando suas função
-        task = runTask();
+        //ArrayList<String> task;//cria um arraylist para tarefas chamando suas função
+        //task = runTask();
         //cria os arrayadapters
         ArrayAdapter arrayAdapterM = new MeetingAdapter(this, addMeeting());
+        ArrayAdapter arrayAdapterT = new TaskAdapter(this, addTask());
         //ArrayAdapter<String> arrayAdapterM = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, meeting);
-        ArrayAdapter<String> arrayAdapterT = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_checked, task);
+        //ArrayAdapter<String> arrayAdapterT = new ArrayAdapter<String>(this, android.R.layout.simple_selectable_list_item, task);
 
         //seta os arrayadapters
         listMeeting.setAdapter(arrayAdapterM);
@@ -33,7 +34,7 @@ public class InicialActivity extends AppCompatActivity {
 
     }
 
-    //função para lista de tarefas
+    /*//função para lista de tarefas
     private ArrayList<String> runTask(){
         ArrayList<String> dados = new ArrayList<String>();//cria o array
         dados.add("Task1");
@@ -46,7 +47,7 @@ public class InicialActivity extends AppCompatActivity {
         dados.add("Task8");
         dados.add("Task9");
         return dados;//retorna todos os dados adicionados
-    }
+    }*/
     //para popular as reuniões com os list customizado
     private ArrayList<Meeting> addMeeting(){
         ArrayList<Meeting> meetings = new ArrayList<Meeting>();
@@ -66,5 +67,24 @@ public class InicialActivity extends AppCompatActivity {
         meetings.add(next);
 
         return meetings;
+    }
+    private ArrayList<Task> addTask(){
+        ArrayList<Task> tasks = new ArrayList<Task>();
+        Task next = new Task("Fazer esboço","20/11/2019",true);
+        tasks.add(next);
+        next = new Task("Primeira tarefa","21/11/2019",false);
+        tasks.add(next);
+        next = new Task("Segunda tarefa","21/11/2019",false);
+        tasks.add(next);
+        next = new Task("Terceira tarefa","21/11/2019",false);
+        tasks.add(next);
+        next = new Task("Quarta tarefa","21/11/2019",false);
+        tasks.add(next);
+        next = new Task("Quinta tarefa","21/11/2019",false);
+        tasks.add(next);
+        next = new Task("Sexta tarefa","21/11/2019",false);
+        tasks.add(next);
+
+        return tasks;
     }
 }
