@@ -6,361 +6,366 @@
     android:layout_height="match_parent"
     android:background="#BF3641"
     tools:context=".MainActivity">
-
-    <LinearLayout
-        android:id="@+id/layContent"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layoutDirection="inherit"
-        android:orientation="vertical">
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
         <LinearLayout
-            android:id="@+id/layTop"
+            android:id="@+id/layContent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/shape"
-            android:orientation="vertical"
-            app:layout_constraintHorizontal_bias="0.6">
-            <TextView
-                android:id="@+id/txtName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="--Name--"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle" />
-            <TextView
-                android:id="@+id/txtLName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="--Last Name--"
-                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
-            <TextView
-                android:id="@+id/txtId"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="--Id User--"
-                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layMidle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/shape"
-            android:orientation="vertical"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/layTop">
-
-            <TextView
-                android:id="@+id/txtFunction"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="--Function--"
-                android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"/>
-
-            <TextView
-                android:id="@+id/txtTeam"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="--Team--"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layMeetings"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/shape"
-            android:orientation="vertical"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/layMidle">
-
-            <TextView
-                android:id="@+id/txtMeetings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Meetings"
-                android:textColor="#BF3641"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
-
-            <ListView
-                android:id="@+id/lstMeetings"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layTasks"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/shape"
-            android:orientation="vertical"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/layMidle">
-
-            <TextView
-                android:id="@+id/txtTasks"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tasks"
-                android:textColor="#BF3641"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
-
-            <ListView
-                android:id="@+id/lstTasks"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layRegisterProfile"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/shape"
-            android:orientation="vertical"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/layMidle">
-
-            <TextView
-                android:id="@+id/txtRegisterProfile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Register Profile"
-                android:textColor="#BF3641"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
             <LinearLayout
-                android:id="@+id/layButtonsProfile"
+                android:id="@+id/layTop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
-
-                <LinearLayout
-                    android:id="@+id/layAddProfile"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_bias="0.6">
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="30dp">
-                    <Button
-                        android:id="@+id/btnAddProfile"
-                        android:layout_marginVertical="10dp"
-                        android:paddingVertical="13dp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/shape_button"
-                        android:drawableBottom="@drawable/ic_person_add_black_24dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="550dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layEditProfile"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
+                    android:text="--Name--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle" />
+                <TextView
+                    android:id="@+id/txtLName"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="30dp">
-                    <Button
-                        android:id="@+id/btnEditProfile"
-                        android:layout_marginVertical="10dp"
-                        android:paddingVertical="13dp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/shape_button"
-                        android:drawableBottom="@drawable/ic_edit_black_24dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="550dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layExcludeProfile"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
+                    android:text="--Last Name--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title" />
+                <TextView
+                    android:id="@+id/txtId"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="30dp">
-                    <Button
-                        android:id="@+id/btnExcldeProfile"
-                        android:layout_marginVertical="10dp"
-                        android:paddingVertical="13dp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/shape_button"
-                        android:drawableBottom="@drawable/ic_delete_black_24dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="550dp" />
-                </LinearLayout>
+                    android:text="--Id User--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"/>
 
             </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/layRegisterMeeting"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/shape"
-            android:orientation="vertical"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/layMidle">
 
-            <TextView
-                android:id="@+id/txtRegisterMeeting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Register Meeting"
-                android:textColor="#BF3641"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
             <LinearLayout
-                android:id="@+id/layButtonsMeeting"
+                android:id="@+id/layMidle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/layTop">
 
-                <LinearLayout
-                    android:id="@+id/layAddMeeting"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/txtFunction"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="30dp">
-                    <Button
-                        android:id="@+id/btnAddMeeting"
-                        android:layout_marginVertical="10dp"
-                        android:paddingVertical="13dp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/shape_button"
-                        android:drawableBottom="@drawable/ic_add_alert_black_24dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="550dp" />
-                </LinearLayout>
+                    android:text="--Function--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Subtitle"/>
 
-                <LinearLayout
-                    android:id="@+id/layEditMeeting"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/txtTeam"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="30dp">
-                    <Button
-                        android:id="@+id/btnEditMeeting"
-                        android:layout_marginVertical="10dp"
-                        android:paddingVertical="13dp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/shape_button"
-                        android:drawableBottom="@drawable/ic_edit_black_24dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="550dp" />
-                </LinearLayout>
+                    android:text="--Team--"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
+            </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/layExcludeMeeting"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/layMeetings"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/layMidle">
+
+                <TextView
+                    android:id="@+id/txtMeetings"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="30dp">
-                    <Button
-                        android:id="@+id/btnExcludeMeeting"
-                        android:layout_marginVertical="10dp"
-                        android:paddingVertical="13dp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/shape_button"
-                        android:drawableBottom="@drawable/ic_delete_black_24dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="550dp" />
-                </LinearLayout>
+                    android:text="Meetings"
+                    android:textColor="#BF3641"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
 
+                <ListView
+                    android:id="@+id/lstMeetings"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layTasks"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/layMidle">
+
+                <TextView
+                    android:id="@+id/txtTasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tasks"
+                    android:textColor="#BF3641"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
+
+                <ListView
+                    android:id="@+id/lstTasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layRegisterProfile"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/layMidle">
+
+                <TextView
+                    android:id="@+id/txtRegisterProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register Profile"
+                    android:textColor="#BF3641"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
+                <LinearLayout
+                    android:id="@+id/layButtonsProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/layAddProfile"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="30dp">
+                        <Button
+                            android:clickable="true"
+                            android:id="@+id/btnAddProfile"
+                            android:layout_marginVertical="10dp"
+                            android:paddingVertical="13dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/shape_button"
+                            android:drawableBottom="@drawable/ic_person_add_black_24dp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="550dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layEditProfile"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="30dp">
+                        <Button
+                            android:id="@+id/btnEditProfile"
+                            android:layout_marginVertical="10dp"
+                            android:paddingVertical="13dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/shape_button"
+                            android:drawableBottom="@drawable/ic_edit_black_24dp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="550dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layExcludeProfile"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="30dp">
+                        <Button
+                            android:id="@+id/btnExcldeProfile"
+                            android:layout_marginVertical="10dp"
+                            android:paddingVertical="13dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/shape_button"
+                            android:drawableBottom="@drawable/ic_delete_black_24dp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="550dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layRegisterMeeting"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/layMidle">
+
+                <TextView
+                    android:id="@+id/txtRegisterMeeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register Meeting"
+                    android:textColor="#BF3641"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
+                <LinearLayout
+                    android:id="@+id/layButtonsMeeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/layAddMeeting"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="30dp">
+                        <Button
+                            android:id="@+id/btnAddMeeting"
+                            android:layout_marginVertical="10dp"
+                            android:paddingVertical="13dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/shape_button"
+                            android:drawableBottom="@drawable/ic_add_alert_black_24dp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="550dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layEditMeeting"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="30dp">
+                        <Button
+                            android:id="@+id/btnEditMeeting"
+                            android:layout_marginVertical="10dp"
+                            android:paddingVertical="13dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/shape_button"
+                            android:drawableBottom="@drawable/ic_edit_black_24dp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="550dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layExcludeMeeting"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="30dp">
+                        <Button
+                            android:id="@+id/btnExcludeMeeting"
+                            android:layout_marginVertical="10dp"
+                            android:paddingVertical="13dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/shape_button"
+                            android:drawableBottom="@drawable/ic_delete_black_24dp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="550dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layRegisterTask"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape"
+                android:orientation="vertical"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/layMidle">
+
+                <TextView
+                    android:id="@+id/txtRegisterTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register Task"
+                    android:textColor="#BF3641"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
+                <LinearLayout
+                    android:id="@+id/layButtonsTask"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/layAddTask"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="30dp">
+                        <Button
+                            android:id="@+id/btnAddTask"
+                            android:layout_marginVertical="10dp"
+                            android:paddingVertical="13dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/shape_button"
+                            android:drawableBottom="@drawable/ic_note_add_black_24dp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="550dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layEditTask"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="30dp">
+                        <Button
+                            android:id="@+id/btnEditTask"
+                            android:layout_marginVertical="10dp"
+                            android:paddingVertical="13dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/shape_button"
+                            android:drawableBottom="@drawable/ic_edit_black_24dp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="550dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layExcludeTask"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingLeft="30dp">
+                        <Button
+                            android:id="@+id/btnExcludeTask"
+                            android:layout_marginVertical="10dp"
+                            android:paddingVertical="13dp"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:background="@drawable/shape_button"
+                            android:drawableBottom="@drawable/ic_delete_black_24dp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="550dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/layRegisterTask"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/shape"
-            android:orientation="vertical"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/layMidle">
-
-            <TextView
-                android:id="@+id/txtRegisterTask"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Register Task"
-                android:textColor="#BF3641"
-                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"/>
-            <LinearLayout
-                android:id="@+id/layButtonsTask"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
-
-                <LinearLayout
-                    android:id="@+id/layAddTask"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="30dp">
-                    <Button
-                        android:id="@+id/btnAddTask"
-                        android:layout_marginVertical="10dp"
-                        android:paddingVertical="13dp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/shape_button"
-                        android:drawableBottom="@drawable/ic_note_add_black_24dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="550dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layEditTask"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="30dp">
-                    <Button
-                        android:id="@+id/btnEditTask"
-                        android:layout_marginVertical="10dp"
-                        android:paddingVertical="13dp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/shape_button"
-                        android:drawableBottom="@drawable/ic_edit_black_24dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="550dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layExcludeTask"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingLeft="30dp">
-                    <Button
-                        android:id="@+id/btnExcludeTask"
-                        android:layout_marginVertical="10dp"
-                        android:paddingVertical="13dp"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:background="@drawable/shape_button"
-                        android:drawableBottom="@drawable/ic_delete_black_24dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="550dp" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

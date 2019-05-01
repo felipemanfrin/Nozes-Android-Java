@@ -12,7 +12,7 @@
         android:layout_width="423dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="10dp"
         android:background="#FFFFFF"
         android:text="LOGIN"
         android:textColor="#8C232C"
@@ -54,7 +54,6 @@
         android:drawablePadding="5dp"
         android:ems="10"
         android:hint="Password"
-
         android:inputType="textPassword"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
@@ -66,11 +65,14 @@
 
     <TextView
         android:id="@+id/txtForgot"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:paddingVertical="10dp"
+        android:layout_marginBottom="10dp"
         android:text="Forgot Password"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
