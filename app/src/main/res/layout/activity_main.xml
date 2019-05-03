@@ -19,6 +19,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="monospace"
+        android:onClick="logar"
         app:layout_constraintBottom_toTopOf="@+id/txtForgot"
         app:layout_constraintEnd_toEndOf="@+id/txtForgot"
         app:layout_constraintHorizontal_bias="0.475"
@@ -73,6 +74,7 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:clickable="true"
+        android:onClick="forgot"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

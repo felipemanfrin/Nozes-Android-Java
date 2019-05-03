@@ -8,6 +8,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
@@ -17,13 +18,16 @@ import java.util.ArrayList;
 
 public class InicialActivity extends AppCompatActivity {
 
+    private ListView listMeeting, listTask;
+    private ImageButton addProfile, addMeeting, addTask, editProfile, editMeeting, editTask, rmvProfile, rmvMeeting, rmvTask;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial);
 
-        ListView listMeeting = (ListView) findViewById(R.id.lstMeetings);//cria a lista para reuniões a partir do xml
-        ListView listTask = (ListView) findViewById(R.id.lstTasks);//cria a lista para as tarefas a partir do xml
+        listMeeting = (ListView) findViewById(R.id.lstMeetings);//cria a lista para reuniões a partir do xml
+        listTask = (ListView) findViewById(R.id.lstTasks);//cria a lista para as tarefas a partir do xml
 
         //cria os arrayadapters
         ArrayAdapter arrayAdapterM = new MeetingAdapter(this, addMeeting());
@@ -32,7 +36,6 @@ public class InicialActivity extends AppCompatActivity {
         //seta os arrayadapters
         listMeeting.setAdapter(arrayAdapterM);
         listTask.setAdapter(arrayAdapterT);
-
 
     }
     //para popular as reuniões com os list customizado
