@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Nozes</string>
+    <string name="error_login">Error Login</string>
 </resources>
