@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EhNozes</string>
+    <string name="title_person">Person</string>
+    <string name="title_tasks">Tasks</string>
+    <string name="title_meetings">Meetings</string>
+    <string name="title_settings">Settings</string>
+</resources>
