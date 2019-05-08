@@ -15,13 +15,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
+    private Fragment selectFragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectFragment = null;
+            //selectFragment = new PersonFragment();
 
             switch (item.getItemId()) {
                 case R.id.navigation_person:
@@ -49,5 +50,9 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        //coloca como padrão o framePerson
+        selectFragment = new PersonFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectFragment).commit();
     }
 }
