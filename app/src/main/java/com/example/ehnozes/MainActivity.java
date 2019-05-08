@@ -1,11 +1,17 @@
 package com.example.ehnozes;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView mTextMessage;
@@ -15,21 +21,24 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectFragment = null;
+
             switch (item.getItemId()) {
                 case R.id.navigation_person:
-                    mTextMessage.setText(R.string.title_person);
-                    return true;
+                    selectFragment = new PersonFragment();
+                    break;
                 case R.id.navigation_tasks:
-                    mTextMessage.setText(R.string.title_tasks);
-                    return true;
+                    selectFragment = new TasksFragment();
+                    break;
                 case R.id.navigation_meetings:
-                    mTextMessage.setText(R.string.title_meetings);
-                    return true;
+                    selectFragment = new MeetingsFragment();
+                    break;
                 case R.id.navigation_settings:
-                    mTextMessage.setText(R.string.title_settings);
-                    return true;
+                    selectFragment = new SettingsFragment();
+                    break;
             }
-            return false;
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectFragment).commit();
+            return true;
         }
     };
 
@@ -41,5 +50,4 @@ public class MainActivity extends AppCompatActivity {
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
 }
