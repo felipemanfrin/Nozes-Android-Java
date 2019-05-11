@@ -15,8 +15,10 @@ public class ProfileActivity extends AppCompatActivity {
     }
     public void onTask(View view){
         startActivity(new Intent(ProfileActivity.this, TaskActivity.class));
+        finish();
     }
     public void onMeeting(View view){
         startActivity(new Intent(ProfileActivity.this, MeetingActivity.class));
+        finish();
     }
 }

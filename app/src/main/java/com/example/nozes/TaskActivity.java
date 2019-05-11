@@ -22,9 +22,11 @@ public class TaskActivity extends AppCompatActivity {
     }
     public void onProfile(View view){
         startActivity(new Intent(TaskActivity.this, ProfileActivity.class));
+        finish();
     }
     public void onMeeting(View view){
         startActivity(new Intent(TaskActivity.this, MeetingActivity.class));
+        finish();
     }
     private ArrayList<Task> addTask(){
         ArrayList<Task> tasks = new ArrayList<Task>();
