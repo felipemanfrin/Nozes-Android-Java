@@ -1,7 +1,9 @@
 package com.example.nozes;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -17,6 +19,12 @@ public class TaskActivity extends AppCompatActivity {
         ListView listTask = (ListView) findViewById(R.id.lstTasks);
         ArrayAdapter arrayAdapter = new TaskAdapter(this, addTask());
         listTask.setAdapter(arrayAdapter);
+    }
+    public void onProfile(View view){
+        startActivity(new Intent(TaskActivity.this, ProfileActivity.class));
+    }
+    public void onMeeting(View view){
+        startActivity(new Intent(TaskActivity.this, MeetingActivity.class));
     }
     private ArrayList<Task> addTask(){
         ArrayList<Task> tasks = new ArrayList<Task>();

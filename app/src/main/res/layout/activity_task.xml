@@ -120,12 +120,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
                 android:gravity="center">
+
                 <ImageButton
                     android:id="@+id/btnProfile"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="49dp"
                     android:background="@drawable/shape_button"
-                    android:src="@drawable/ic_person_desactivated_40dp" />
+                    android:src="@drawable/ic_person_desactivated_40dp"
+                    android:onClick="onProfile"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -149,7 +151,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_button"
-                    android:src="@drawable/ic_alarm_desactivated_40dp" />
+                    android:src="@drawable/ic_alarm_desactivated_40dp"
+                    android:onClick="onMeeting"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

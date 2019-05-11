@@ -122,7 +122,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_button"
-                    android:src="@drawable/ic_person_desactivated_40dp" />
+                    android:src="@drawable/ic_person_desactivated_40dp"
+                    android:onClick="onProfile"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -134,7 +135,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_button"
-                    android:src="@drawable/ic_check_box_desactivated_40dp" />
+                    android:src="@drawable/ic_check_box_desactivated_40dp"
+                    android:onClick="onTask"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
