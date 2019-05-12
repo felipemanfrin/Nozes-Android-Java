@@ -6,88 +6,71 @@
     android:layout_height="match_parent"
     android:background="#BF3641"
     tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="423dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="10dp"
-        android:background="#FFFFFF"
-        android:text="LOGIN"
-        android:textColor="#8C232C"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:typeface="monospace"
-        android:onClick="logar"
-        app:layout_constraintBottom_toTopOf="@+id/txtForgot"
-        app:layout_constraintEnd_toEndOf="@+id/txtForgot"
-        app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toStartOf="@+id/txtForgot" />
-
-    <EditText
-        android:id="@+id/edtUser"
-        android:layout_width="311dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:drawableStart="@drawable/ic_person_black_24dp"
-        android:drawableLeft="@drawable/ic_person_black_24dp"
-        android:drawablePadding="5dp"
-        android:ems="10"
-        android:hint="User"
-        android:inputType="textPersonName"
-        android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/edtPassword"
-        app:layout_constraintEnd_toEndOf="@+id/edtPassword"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/edtPassword" />
-
-    <EditText
-        android:id="@+id/edtPassword"
-        android:layout_width="311dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:drawableStart="@drawable/ic_lock_black_24dp"
-        android:drawableLeft="@drawable/ic_lock_black_24dp"
-        android:drawablePadding="5dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
-        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintStart_toStartOf="@+id/btnLogin" />
-
-    <TextView
-        android:id="@+id/txtForgot"
+    <LinearLayout
+        android:id="@+id/layContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingVertical="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Forgot Password"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:clickable="true"
-        android:onClick="forgot"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="232dp"
+            android:layout_height="208dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/edtUser"
+            app:srcCompat="@mipmap/esquilot" />
+        <EditText
+            android:id="@+id/edtUser"
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/ic_person_black_24dp"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="User"
+            android:inputType="textPersonName"
+            android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="232dp"
-        android:layout_height="208dp"
-        android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/edtUser"
-        app:layout_constraintEnd_toEndOf="@+id/edtUser"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="@+id/edtUser"
-        app:srcCompat="@mipmap/esquilot" />
-
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="311dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@drawable/ic_lock_black_24dp"
+            android:drawableLeft="@drawable/ic_lock_black_24dp"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="423dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:background="#FFFFFF"
+            android:text="LOGIN"
+            android:textColor="#8C232C"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:onClick="logar" />
+        <TextView
+            android:id="@+id/txtForgot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Forgot Password"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:clickable="true"
+            android:onClick="forgot" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

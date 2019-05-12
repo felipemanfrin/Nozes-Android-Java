@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void logar(View view){
-            startActivity(new Intent(MainActivity.this, InicialActivity.class));
+            startActivity(new Intent(MainActivity.this, ProfileActivity.class));
             Toast.makeText(getApplicationContext(), edtUser.getText().toString(), Toast.LENGTH_SHORT).show();
     }
     public void forgot(View view){

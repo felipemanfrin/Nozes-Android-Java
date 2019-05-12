@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/esquilo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ForgotActivity"></activity>
+        <activity android:name=".MeetingActivity"></activity>
+        <activity android:name=".TaskActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ForgotActivity" />
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".InicialActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
