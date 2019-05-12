@@ -30,7 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
                 String gender = "GenderTeste";
                 Integer age = 1;
 
-                String resultado = crud.insertData(name, lastName, jobRole, team, email, gender, age);
+                String resultado = crud.insertProfile(name, lastName, jobRole, team, email, gender, age);
 
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
             }

@@ -68,7 +68,7 @@ public class DBController {
         values.put(CreateDB.HORA, hora);
         values.put(CreateDB.ATA, ata);
 
-        result = db.insert(CreateDB.TAB_TASK, null, values); //retorno do insert
+        result = db.insert(CreateDB.TAB_MEETING, null, values); //retorno do insert
         db.close();//fecha db
 
         if (result ==-1)
