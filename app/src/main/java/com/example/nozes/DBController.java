@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.Date;
+
 public class DBController {
     private SQLiteDatabase db;
     private CreateDB database;
@@ -12,11 +14,11 @@ public class DBController {
     public DBController(Context context){
         database = new CreateDB(context);
     }
-
-    public String insertData(String name, String lasName, String jobRole,String team, String email,
+    //**********************INSERT*************************************
+    public String insertProfile(String name, String lasName, String jobRole,String team, String email,
                              String gender, Integer age ){
-        ContentValues values;
-        long result;
+        ContentValues values;//var para valores de insert
+        long result; //result
 
         db = database.getWritableDatabase();
         values = new ContentValues();
@@ -28,42 +30,54 @@ public class DBController {
         values.put(CreateDB.GENDER, gender);
         values.put(CreateDB.AGE, age);
 
-        result = db.insert(CreateDB.TAB_PROFILE, null, values);
-        db.close();
+        result = db.insert(CreateDB.TAB_PROFILE, null, values); //retorno do insert
+        db.close();//fecha db
 
         if (result ==-1)
-            return "Erro ao inserir registro";
+            return "Erro ao inserir Profile";
         else
-            return "Registro Inserido com sucesso";
+            return "Profile Inserido com sucesso";
     }
-    public Cursor loadData(){
-        Cursor cursor;
-        String[] values =  {database.ID_USER, database.NAME, database.LAST_NAME, database.JOB_ROLE,
-                database.TEAM, database.EMAIL, database.GENDER, database.AGE};
-        db = database.getReadableDatabase();
-        cursor = db.query(database.TAB_PROFILE, values, null, null, null, null, null, null);
+    public String insertTask(String title, Double custo, Integer prazo, String descricao ){
+        ContentValues values;//var para valores de insert
+        long result; //result
 
-        if(cursor!=null){
-            cursor.moveToFirst();
-        }
-        db.close();
-        return cursor;
-    }
-    public Cursor loadDataById(int id){
-        Cursor cursor;
-        String[]values =  {database.ID_USER, database.NAME, database.LAST_NAME, database.JOB_ROLE,
-                database.TEAM, database.EMAIL, database.GENDER, database.AGE};
-        String where = CreateDB.ID_USER + "=" + id;
-        db = database.getReadableDatabase();
-        cursor = db.query(CreateDB.TAB_PROFILE,values,where, null, null, null, null, null);
+        db = database.getWritableDatabase();
+        values = new ContentValues();
+        values.put(CreateDB.TITLE_TASK, title);
+        values.put(CreateDB.CUSTO, custo);
+        values.put(CreateDB.PRAZO, prazo);
+        values.put(CreateDB.DESCRICAO, descricao);
 
-        if(cursor!=null){
-            cursor.moveToFirst();
-        }
-        db.close();
-        return cursor;
+        result = db.insert(CreateDB.TAB_TASK, null, values); //retorno do insert
+        db.close();//fecha db
+
+        if (result ==-1)
+            return "Erro ao inserir Task";
+        else
+            return "Task Inserido com sucesso";
     }
-    public void alterRegistro(int id, String name, String lasName, String jobRole, String team,
+    public String insertMeeting(String title, String data, String hora, String ata){
+        ContentValues values;//var para valores de insert
+        long result; //result
+
+        db = database.getWritableDatabase();
+        values = new ContentValues();
+        values.put(CreateDB.TITLE_MEETING, title);
+        values.put(CreateDB.DATA, data);
+        values.put(CreateDB.HORA, hora);
+        values.put(CreateDB.ATA, ata);
+
+        result = db.insert(CreateDB.TAB_TASK, null, values); //retorno do insert
+        db.close();//fecha db
+
+        if (result ==-1)
+            return "Erro ao inserir Meeting";
+        else
+            return "Meeting Inserido com sucesso";
+    }
+    //**********************ALTER*************************************
+    public void alterProfile(int id, String name, String lasName, String jobRole, String team,
                               String email, String gender, int age){
         ContentValues values;
         String where;
@@ -84,10 +98,90 @@ public class DBController {
         db.update(database.TAB_PROFILE,values,where,null);
         db.close();
     }
-    public void deleteRegistro(int id){
+
+    public void alterTask(int id, String title, double custo, Integer prazo, String descricao){
+        ContentValues values;
+        String where;
+
+        db = database.getWritableDatabase();
+
+        where = CreateDB.ID_TASK + "=" + id;
+
+        values = new ContentValues();
+        values.put(CreateDB.TITLE_TASK, title);
+        values.put(CreateDB.CUSTO, custo);
+        values.put(CreateDB.PRAZO, prazo);
+        values.put(CreateDB.DESCRICAO, descricao);
+
+        db.update(database.TAB_TASK,values,where,null);
+        db.close();
+    }
+
+    public void alterMeeting(int id, String title, String data, String hora, String ata){
+        ContentValues values;
+        String where;
+
+        db = database.getWritableDatabase();
+
+        where = CreateDB.ID_MEETING + "=" + id;
+
+        values = new ContentValues();
+        values.put(CreateDB.TITLE_MEETING, title);
+        values.put(CreateDB.DATA, data);
+        values.put(CreateDB.HORA, hora);
+        values.put(CreateDB.ATA, ata);
+
+        db.update(database.TAB_TASK,values,where,null);
+        db.close();
+    }
+    //**********************DELETE*************************************
+    public void deleteProfile(int id){
         String where = database.ID_USER + "=" + id;
         db = database.getReadableDatabase();
         db.delete(CreateDB.TAB_PROFILE,where,null);
         db.close();
     }
+
+    public void deleteTask(int id){
+        String where = database.ID_TASK + "=" + id;
+        db = database.getReadableDatabase();
+        db.delete(CreateDB.TAB_TASK,where,null);
+        db.close();
+    }
+
+    public void deleteMeeting(int id){
+        String where = database.ID_TASK + "=" + id;
+        db = database.getReadableDatabase();
+        db.delete(CreateDB.TAB_MEETING,where,null);
+        db.close();
+    }
+    //*************************LOAD************************************
+    public Cursor loadProfile(){
+        Cursor cursor;
+        String[] values =  {database.ID_USER, database.NAME, database.LAST_NAME, database.JOB_ROLE,
+                database.TEAM, database.EMAIL, database.GENDER, database.AGE};
+        db = database.getReadableDatabase();
+        cursor = db.query(database.TAB_PROFILE, values, null, null, null, null, null, null);
+
+        if(cursor!=null){
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }
+    public Cursor loadProfileById(int id){
+        Cursor cursor;
+        String[]values =  {database.ID_USER, database.NAME, database.LAST_NAME, database.JOB_ROLE,
+                database.TEAM, database.EMAIL, database.GENDER, database.AGE};
+        String where = CreateDB.ID_USER + "=" + id;
+        db = database.getReadableDatabase();
+        cursor = db.query(CreateDB.TAB_PROFILE,values,where, null, null, null, null, null);
+
+        if(cursor!=null){
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }
+
 }

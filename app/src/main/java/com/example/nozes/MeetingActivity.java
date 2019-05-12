@@ -5,9 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MeetingActivity extends AppCompatActivity {
 
@@ -19,6 +22,42 @@ public class MeetingActivity extends AppCompatActivity {
         ListView listMeeting = (ListView) findViewById(R.id.lstMeetings);
         ArrayAdapter arrayAdapter = new MeetingAdapter(this, addMeeting());
         listMeeting.setAdapter(arrayAdapter);
+
+        //Inserir dados
+        ImageButton botaoadd = (ImageButton) findViewById(R.id.btnAddMeeting);
+        botaoadd.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                DBController crud = new DBController(getBaseContext());
+                String title = "TituloTeste";
+                String data = "01-01-2019";
+                String hora = "00:00:00";
+                String ata = "Ata Teste";
+
+                String resultado = crud.insertMeeting(title, data, hora, ata);
+
+                Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+            }
+        });
+        //Edita dados
+        ImageButton botaoedt = (ImageButton) findViewById(R.id.btnEditMeeting);
+        botaoedt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+        //Exclui dados
+        ImageButton botaorem = (ImageButton) findViewById(R.id.btnRemoveMeeting);
+        botaorem.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
     }
     public void onProfile(View view){
         startActivity(new Intent(MeetingActivity.this, ProfileActivity.class));

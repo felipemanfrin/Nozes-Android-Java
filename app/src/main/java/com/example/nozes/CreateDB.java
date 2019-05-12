@@ -62,8 +62,8 @@ public class CreateDB extends SQLiteOpenHelper {
         sql = "CREATE TABLE IF NOT EXISTS "+TAB_MEETING+"("
                 + ID_MEETING + " integer primary key autoincrement,"
                 + TITLE_MEETING + " text,"
-                + DATA + " date,"
-                + HORA + " date,"
+                + DATA + " text,"
+                + HORA + " text,"
                 + ATA + " text"
                 +")";
         db.execSQL(sql);

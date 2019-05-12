@@ -1,11 +1,15 @@
 package com.example.nozes;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,7 +23,44 @@ public class TaskActivity extends AppCompatActivity {
         ListView listTask = (ListView) findViewById(R.id.lstTasks);
         ArrayAdapter arrayAdapter = new TaskAdapter(this, addTask());
         listTask.setAdapter(arrayAdapter);
+
+        //Inserir dados
+        ImageButton botaoadd = (ImageButton) findViewById(R.id.btnAddTask);
+        botaoadd.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+                DBController crud = new DBController(getBaseContext());
+                String titletask = "NewTask";
+                double custo = 10.00;
+                int prazo = 2;
+                String descricao = "Descrição Teste";
+
+                String resultado = crud.insertTask(titletask, custo, prazo, descricao);
+
+                Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+            }
+        });
+        //Edita dados
+        ImageButton botaoedt = (ImageButton) findViewById(R.id.btnEditTask);
+        botaoedt.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+        //Exclui dados
+        ImageButton botaorem = (ImageButton) findViewById(R.id.btnRemoveTask);
+        botaorem.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
     }
+
     public void onProfile(View view){
         startActivity(new Intent(TaskActivity.this, ProfileActivity.class));
         finish();
