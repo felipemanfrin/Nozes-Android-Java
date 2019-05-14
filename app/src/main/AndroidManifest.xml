@@ -4,16 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/esquilo"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/esquilo"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MeetingActivity"></activity>
-        <activity android:name=".TaskActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".ForgotActivity" />
-        <activity android:name=".CadastroActivity" />
+        <activity android:name=".activity_aba_task"></activity>
+        <activity android:name=".activity_cadastro" />
+        <activity android:name=".InicialActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
