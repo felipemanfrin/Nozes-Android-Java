@@ -15,14 +15,18 @@ import java.util.ArrayList;
 
 public class TaskActivity extends AppCompatActivity {
 
+    CreateDB db;
+    ArrayList<Task> listTask;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task);
-
-        ListView listTask = (ListView) findViewById(R.id.lstTasks);
+        db = new CreateDB(this);
+        /*ListView listTask = (ListView) findViewById(R.id.lstTasks);
         ArrayAdapter arrayAdapter = new TaskAdapter(this, addTask());
         listTask.setAdapter(arrayAdapter);
+
 
         //Inserir dados
         ImageButton botaoadd = (ImageButton) findViewById(R.id.btnAddTask);
@@ -40,7 +44,7 @@ public class TaskActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
         //Edita dados
         ImageButton botaoedt = (ImageButton) findViewById(R.id.btnEditTask);
         botaoedt.setOnClickListener(new View.OnClickListener(){
@@ -56,7 +60,6 @@ public class TaskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
             }
         });
     }
@@ -69,7 +72,16 @@ public class TaskActivity extends AppCompatActivity {
         startActivity(new Intent(TaskActivity.this, MeetingActivity.class));
         finish();
     }
-    private ArrayList<Task> addTask(){
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ListView list = (ListView) findViewById(R.id.lstTasks);
+        listTask = db.getAllTasks();
+        TaskAdapter adapter = new TaskAdapter(this, listTask);
+        list.setAdapter(adapter);
+
+    }
+    /*private ArrayList<Task> addTask(){
         ArrayList<Task> tasks = new ArrayList<Task>();
         Task next = new Task("Fazer esboço","20/11/2019",true);
         tasks.add(next);
@@ -86,5 +98,5 @@ public class TaskActivity extends AppCompatActivity {
         next = new Task("Sexta tarefa","21/11/2019",false);
         tasks.add(next);
         return tasks;
-    }
+    }*/
 }

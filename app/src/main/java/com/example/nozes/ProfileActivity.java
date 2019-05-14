@@ -16,7 +16,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         //Inserir dados
-        ImageButton botaoadd = (ImageButton) findViewById(R.id.btnAddProfile);
+        /*ImageButton botaoadd = (ImageButton) findViewById(R.id.btnAddProfile);
         botaoadd.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -34,7 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
         //Edita dados
         ImageButton botaoedt = (ImageButton) findViewById(R.id.btnEditProfile);
         botaoedt.setOnClickListener(new View.OnClickListener(){

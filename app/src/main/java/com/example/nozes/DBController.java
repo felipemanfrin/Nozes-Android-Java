@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class DBController {
@@ -84,7 +85,7 @@ public class DBController {
 
         db = database.getWritableDatabase();
 
-        where = CreateDB.ID_USER + "=" + id;
+        where = CreateDB.ID_PROFILE + "=" + id;
 
         values = new ContentValues();
         values.put(CreateDB.NAME, name);
@@ -136,7 +137,7 @@ public class DBController {
     }
     //**********************DELETE*************************************
     public void deleteProfile(int id){
-        String where = database.ID_USER + "=" + id;
+        String where = database.ID_PROFILE + "=" + id;
         db = database.getReadableDatabase();
         db.delete(CreateDB.TAB_PROFILE,where,null);
         db.close();
@@ -150,7 +151,7 @@ public class DBController {
     }
 
     public void deleteMeeting(int id){
-        String where = database.ID_TASK + "=" + id;
+        String where = database.ID_MEETING + "=" + id;
         db = database.getReadableDatabase();
         db.delete(CreateDB.TAB_MEETING,where,null);
         db.close();
@@ -158,7 +159,7 @@ public class DBController {
     //*************************LOAD************************************
     public Cursor loadProfile(){
         Cursor cursor;
-        String[] values =  {database.ID_USER, database.NAME, database.LAST_NAME, database.JOB_ROLE,
+        String[] values =  {database.ID_PROFILE, database.NAME, database.LAST_NAME, database.JOB_ROLE,
                 database.TEAM, database.EMAIL, database.GENDER, database.AGE};
         db = database.getReadableDatabase();
         cursor = db.query(database.TAB_PROFILE, values, null, null, null, null, null, null);
@@ -169,11 +170,23 @@ public class DBController {
         db.close();
         return cursor;
     }
+    public Cursor loadTask(){
+        Cursor cursor;
+        String[] values =  {database.ID_TASK, database.TITLE_TASK, database.CUSTO, database.PRAZO, database.DESCRICAO};
+        db = database.getReadableDatabase();
+        cursor = db.query(database.TAB_TASK, values, null, null, null, null, null, null);
+
+        if(cursor!=null){
+            cursor.moveToFirst();
+        }
+        db.close();
+        return cursor;
+    }
     public Cursor loadProfileById(int id){
         Cursor cursor;
-        String[]values =  {database.ID_USER, database.NAME, database.LAST_NAME, database.JOB_ROLE,
+        String[]values =  {database.ID_PROFILE, database.NAME, database.LAST_NAME, database.JOB_ROLE,
                 database.TEAM, database.EMAIL, database.GENDER, database.AGE};
-        String where = CreateDB.ID_USER + "=" + id;
+        String where = CreateDB.ID_PROFILE + "=" + id;
         db = database.getReadableDatabase();
         cursor = db.query(CreateDB.TAB_PROFILE,values,where, null, null, null, null, null);
 

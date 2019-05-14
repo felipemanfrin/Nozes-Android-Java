@@ -27,8 +27,8 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         TextView prazo = (TextView) rowView.findViewById(R.id.txtTerm);
         CheckBox chk = (CheckBox) rowView.findViewById(R.id.chkTask);
 
-        titulo.setText(elements.get(position).getTitle());
-        prazo.setText(elements.get(position).getTerm());
+        titulo.setText(elements.get(position).getTitulo());
+        prazo.setText(elements.get(position).getPrazo());
         chk.setChecked(elements.get(position).getChk());
 
         return rowView;

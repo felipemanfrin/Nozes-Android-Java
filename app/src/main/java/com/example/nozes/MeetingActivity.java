@@ -19,12 +19,12 @@ public class MeetingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meeting);
 
-        ListView listMeeting = (ListView) findViewById(R.id.lstMeetings);
-        ArrayAdapter arrayAdapter = new MeetingAdapter(this, addMeeting());
-        listMeeting.setAdapter(arrayAdapter);
+        //ListView listMeeting = (ListView) findViewById(R.id.lstMeetings);
+        //ArrayAdapter arrayAdapter = new MeetingAdapter(this, addMeeting());
+        //listMeeting.setAdapter(arrayAdapter);
 
         //Inserir dados
-        ImageButton botaoadd = (ImageButton) findViewById(R.id.btnAddMeeting);
+        /*ImageButton botaoadd = (ImageButton) findViewById(R.id.btnAddMeeting);
         botaoadd.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -39,7 +39,7 @@ public class MeetingActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
         //Edita dados
         ImageButton botaoedt = (ImageButton) findViewById(R.id.btnEditMeeting);
         botaoedt.setOnClickListener(new View.OnClickListener(){
@@ -67,7 +67,7 @@ public class MeetingActivity extends AppCompatActivity {
         startActivity(new Intent(MeetingActivity.this, TaskActivity.class));
         finish();
     }
-    private ArrayList<Meeting> addMeeting(){
+    /*private ArrayList<Meeting> addMeeting(){
         ArrayList<Meeting> meetings = new ArrayList<Meeting>();
         Meeting next = new Meeting("Aniversário","20/11/2019","18:30");
         meetings.add(next);
@@ -84,5 +84,5 @@ public class MeetingActivity extends AppCompatActivity {
         next = new Meeting("Sexta reunião","21/11/2019","13:00");
         meetings.add(next);
         return meetings;
-    }
+    }*/
 }
